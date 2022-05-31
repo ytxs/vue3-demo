@@ -111,8 +111,7 @@ export default defineConfig(({ mode, command }) => {
         strict: false
       },
       watch: {
-        ignored: ['!**/node_modules/wjh-biz-common/**'],
-        usePolling: true
+        ignored: ['!**/node_modules/wjh-biz-common/**']
       },
 
       // 设置代理，根据我们项目实际情况配置

@@ -3,6 +3,7 @@ import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helpe
 import { createRouter, createWebHashHistory, RouterHistory } from 'vue-router'
 import { QiankunProps } from 'vite-plugin-qiankun/es/helper'
 import ElementPlus from 'element-plus'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import WjhBizCommon from 'wjh-biz-common'
 import axios from 'wjh-biz-common/utils/axios'
 import { styleImport } from '@/utils/style-import'
@@ -10,6 +11,7 @@ import routes from '@/router'
 import { store } from '@/store'
 import App from './App.vue'
 import { setGlobalProperties } from '#/global' // 引入全局变量
+import { Obj } from '#'
 import 'uno.css'
 
 // let locale: any
@@ -40,6 +42,9 @@ function render(props: QiankunProps = {}) {
 
   app = createApp(App)
   setGlobalProperties(app.config.globalProperties)
+  for (const [key, component] of Object.entries(ElementPlusIconsVue as Obj<any>)) {
+    app.component(key, component)
+  }
   styleImport(app).use(WjhBizCommon, { axios }).use(router).use(store)
     .use(ElementPlus, elementOptions)
   app.config.globalProperties.isMicroApp = qiankunWindow.__POWERED_BY_QIANKUN__

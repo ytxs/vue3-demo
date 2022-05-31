@@ -20,6 +20,9 @@
     <template #vxeTitleBox>
       <wjh-desc type="danger">表格头部信息插槽</wjh-desc>
     </template>
+    <template #footerBoxLeft>
+      <wjh-desc>表格合计信息插槽</wjh-desc>
+    </template>
     <template #footerHandleBox>
       <wjh-desc type="danger">表格尾部信息插槽</wjh-desc>
     </template>

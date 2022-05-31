@@ -39,6 +39,7 @@
     }
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.0",
     "axios": "0.21.1",
     "dayjs": "1.11.2",
     "echarts": "5.2.2",
@@ -53,9 +54,8 @@
     "vue-router": "4.0.12",
     "vxe-table": "4.1.7",
     "vxe-table-plugin-export-xlsx": "^3.0.3",
-    "wjh-biz-common": "^1.2.12",
-    "xe-utils": "3.5.2",
-    "xlsx": "^0.18.4"
+    "wjh-biz-common": "^1.2.23",
+    "xe-utils": "3.5.2"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.1",
