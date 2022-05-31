@@ -1,0 +1,95 @@
+{
+  "name": "vite-vue3-starter",
+  "version": "0.0.1",
+  "private": false,
+  "description": "示例项目",
+  "scripts": {
+    "dev:v1": "vite --mode v1/development --force",
+    "build:v1-dev": "vite build --mode v1/dev",
+    "build:v1-pre": "vite build --mode v1/staging",
+    "build:v1-prod": "vite build  --mode v1/production",
+    "build:v1-stage": "vite build --mode v1/staging",
+    "lint": "eslint ./src --ext .vue,.js,.ts",
+    "lint-fix": "eslint --fix ./src --ext .vue,.js,.ts",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://"
+  },
+  "keywords": [
+    "Vite",
+    "Vue3",
+    "TypeScript",
+    "Starter"
+  ],
+  "author": "XPoet",
+  "license": "MIT",
+  "lint-staged": {
+    "src/**/*.{vue,js,ts}": [
+      "eslint --fix --ext .vue,.js,.ts"
+    ],
+    "**/*.{vue,styl}": [
+      "stylelint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "dependencies": {
+    "axios": "0.21.1",
+    "dayjs": "1.11.2",
+    "echarts": "5.2.2",
+    "element-plus": "2.2.2",
+    "exceljs": "^4.3.0",
+    "pinia": "^2.0.14",
+    "unocss-themes": "^2.0.0",
+    "vite-plugin-qiankun": "1.0.10",
+    "vue": "3.2.27",
+    "vue-demi": "latest",
+    "vue-global-api": "^0.4.1",
+    "vue-router": "4.0.12",
+    "vxe-table": "4.1.7",
+    "vxe-table-plugin-export-xlsx": "^3.0.3",
+    "wjh-biz-common": "^1.2.12",
+    "xe-utils": "3.5.2",
+    "xlsx": "^0.18.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "16.2.1",
+    "@commitlint/config-conventional": "16.2.1",
+    "@types/node": "16.11.4",
+    "@types/sortablejs": "1.10.7",
+    "@typescript-eslint/eslint-plugin": "5.7.0",
+    "@typescript-eslint/parser": "5.7.0",
+    "@unocss/preset-attributify": "0.27.2",
+    "@unocss/preset-uno": "0.27.2",
+    "@vitejs/plugin-vue": "2.2.4",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "6.3.0",
+    "eslint": "8.4.1",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-vue": "8.2.0",
+    "eslint-plugin-vue-scoped-css": "2.0.0",
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
+    "postcss-styl": "0.9.0",
+    "rollup": "2.50.0",
+    "rollup-plugin-external-globals": "0.6.1",
+    "stylelint": "14.1.0",
+    "stylelint-plugin-stylus": "0.13.1",
+    "stylus": "0.54.8",
+    "typescript": "4.6.2",
+    "unocss": "0.37.0",
+    "unplugin-vue-components": "0.16.0",
+    "vite": "2.9.9",
+    "vite-plugin-compression": "0.3.5",
+    "vite-plugin-element-plus": "0.0.12",
+    "vite-plugin-html": "2.1.1",
+    "vue-eslint-parser": "7.1.0"
+  }
+}
