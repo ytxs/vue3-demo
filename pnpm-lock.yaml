@@ -68,7 +68,7 @@ dependencies:
   vue-router: 4.0.12_vue@3.2.27
   vxe-table: 4.1.7_vue@3.2.27+xe-utils@3.5.2
   vxe-table-plugin-export-xlsx: 3.0.3_vxe-table@4.1.7
-  wjh-biz-common: 1.2.23_typescript@4.6.2
+  wjh-biz-common: link:../wjh-biz-common
   xe-utils: 3.5.2
 
 devDependencies:
@@ -1794,10 +1794,6 @@ packages:
     resolution: {integrity: sha1-BAFcQd4Ly2nshAUPPZvgyvjW1cw=}
     engines: {node: '>=8'}
     dev: true
-
-  /dayjs/1.10.7:
-    resolution: {integrity: sha1-LPX5Gt0oEWdIRAhmoKHSbzps5Gg=}
-    dev: false
 
   /dayjs/1.11.2:
     resolution: {integrity: sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==}
@@ -4288,24 +4284,6 @@ packages:
       vue-demi: 0.12.5_vue@3.2.27
     dev: false
 
-  /pinia/2.0.9_2gnb3z7mqyp4j3w5h4bsmwbeuu:
-    resolution: {integrity: sha512-iuYdxLJKQ07YPyOHYH05wNG9eKWqkP/4y4GE8+RqEYtz5fwHgPA5kr6zQbg/DoEJGnR2XCm1w1vdt6ppzL9ATg==}
-    peerDependencies:
-      '@vue/composition-api': ^1.4.0
-      typescript: '>=4.4.4'
-      vue: ^2.6.14 || ^3.2.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@vue/devtools-api': 6.1.4
-      typescript: 4.6.2
-      vue: 3.2.27
-      vue-demi: 0.12.5_vue@3.2.27
-    dev: false
-
   /please-upgrade-node/3.2.0:
     resolution: {integrity: sha1-rt3T+ZTJM+StmLmdmlVu+g4v6UI=}
     dependencies:
@@ -4748,14 +4726,6 @@ packages:
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
     dev: true
-
-  /sortablejs/1.10.2:
-    resolution: {integrity: sha1-bkA2TZE/mLhaFPZnj5K1wSIfUpA=}
-    dev: false
-
-  /sortablejs/1.14.0:
-    resolution: {integrity: sha1-bS4XzL2yX0ZHNN9iHU811Ks1s9g=}
-    dev: false
 
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
@@ -5647,12 +5617,6 @@ packages:
       '@vue/shared': 3.2.27
     dev: false
 
-  /vuedraggable/2.24.3:
-    resolution: {integrity: sha1-Q8k4SbdGokzlA+Ej1bJZxwG6DRk=}
-    dependencies:
-      sortablejs: 1.10.2
-    dev: false
-
   /vxe-table-plugin-export-xlsx/3.0.3_vxe-table@4.1.7:
     resolution: {integrity: sha512-PNrj2o+hfCbjVj1cOzb8JWjvoA2JaOi2wOyhS5zrE4yl1hlAieQyL6kIbdS+qaQZRb2j4rUYJ72Mrv1penroFw==}
     peerDependencies:
@@ -5699,29 +5663,6 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
-
-  /wjh-biz-common/1.2.23_typescript@4.6.2:
-    resolution: {integrity: sha512-uw8N50Sc1jdE8Q97ShtspQ5Z8ioyG5ImaBC7wtmNS1/T9KMYCHwkNit1RCHe7bpOPAFzDSKhyxgCT/t3b0wuBA==}
-    dependencies:
-      '@element-plus/icons-vue': 2.0.1_vue@3.2.27
-      axios: 0.21.1
-      dayjs: 1.10.7
-      echarts: 5.2.2
-      element-plus: 2.2.2_vue@3.2.27
-      pinia: 2.0.9_2gnb3z7mqyp4j3w5h4bsmwbeuu
-      sortablejs: 1.14.0
-      unocss-themes: 2.0.0
-      vue: 3.2.27
-      vue-global-api: 0.4.1_vue@3.2.27
-      vue-router: 4.0.12_vue@3.2.27
-      vuedraggable: 2.24.3
-      vxe-table: 4.1.7_vue@3.2.27+xe-utils@3.5.2
-      xe-utils: 3.5.2
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - debug
-      - typescript
-    dev: false
 
   /word-wrap/1.2.3:
     resolution: {integrity: sha1-YQY29rH3A4kb00dxzLF/uTtHB5w=}

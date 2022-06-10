@@ -57,6 +57,7 @@ const gridConfig = computed((): WjhGridConfig => ({
   loading: false,
   isCreated: true,
   pageData: {},
+  // toolbar: { custom: false },
   // 搜索框的其它配置信息
   searchProps: { labelWidth: '100px' },
   searchConfig: [
@@ -135,7 +136,11 @@ const gridConfig = computed((): WjhGridConfig => ({
     'status',
     'audit_name',
   ],
+  checkboxConfig: {
+    checkMethod: () => false
+  },
   title: [
+    { type: 'checkbox', align: 'center', width: '50' },
     { title: '序号', type: 'seq', align: 'center', width: '50' },
     { title: '名称', field: 'name', minWidth: 100, isEdit: true, detailStatus: 'readonly' },
     { title: '别名', field: 'alias', click: ({ column }) => $message.success(`点击表格: ${column.title}`) },
@@ -157,7 +162,7 @@ const gridConfig = computed((): WjhGridConfig => ({
     { title: '审核人', field: 'audit_name', minWidth: '100', formatter: ({ row: { audit_name, audit_no }}) => stringSplicing(audit_name, audit_no, ' | ') },
     {
       title: '操作',
-      minWidth: '120',
+      width: 120,
       fixed: 'right',
       flag: 'btns',
       btns: [
