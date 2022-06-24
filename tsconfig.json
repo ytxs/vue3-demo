@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "vxe-table/types", "vue/macros-global"],
+    "types": ["vite/client", "vxe-table/types", "vue/macros-global", "vue-global-api"],
     "typeRoots": ["./node_modules/@types/", "./types"],
     "baseUrl": ".",
     "paths": {

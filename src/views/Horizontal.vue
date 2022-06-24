@@ -4,7 +4,7 @@
       <wjh-custom-form :formData="detailForm"></wjh-custom-form>
     </template>
     <template #left>
-      <div p-16px>
+      <div class="wjh-col">
         <wjh-custom-form ref="customerFormRef" labelLine rowSpacing="16px" :formData="customerForm"></wjh-custom-form>
         <wjh-custom-form ref="goodsFormRef" labelLine rowSpacing="16px" :formData="goodsForm"></wjh-custom-form>
         <el-button w-full type="primary" @click="handleAddGoodsList">添加</el-button>

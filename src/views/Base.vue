@@ -88,7 +88,8 @@ const gridConfig = computed((): WjhGridConfig => ({
   formProps: {
     mode: 'dialog',
     autoHeight: false,
-    labelWidth: 70
+    labelWidth: 70,
+    readonly: true
   },
   formConfig: [
     searchObj({
