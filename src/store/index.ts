@@ -39,7 +39,7 @@ export const index = defineStore({
     publicUrl: ''
   }),
   getters: {
-    getFileUrl: state => (url: string) => `${state.publicUrl}${url}`,
+    getFileUrl: state => (url: string) => (url?.includes('//') ? url : `${state.publicUrl}${url}`),
     // 传入字符串时，返回 Relation，传入字符串数组时，返回 Relations
     getEnums: (state: any): Enums => (keys) => {
       state.getRelations(keys)

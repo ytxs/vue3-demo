@@ -61,7 +61,26 @@ const gridConfig = computed((): WjhGridConfig => ({
   // 搜索框的其它配置信息
   searchProps: { labelWidth: '100px' },
   searchConfig: [
-    'order_no',
+    {
+      label: '订单',
+      value: 'order_no',
+      type: 'select',
+      options: [{ label: '1111', value: 2323 }],
+      attrs: {
+        multiple: true
+      }
+    },
+    {
+      label: '级联',
+      value: 'ces',
+      type: 'cascader',
+      attrs: {
+        options: [{ label: '1111', value: 2323 }],
+        props: {
+          multiple: true,
+        }
+      }
+    },
     optionsObj({
       taggingList: enums.cus_status, // 展示禁用的状态
       options: []
@@ -105,6 +124,7 @@ const gridConfig = computed((): WjhGridConfig => ({
     },
     {
       value: 'name',
+      default: '这是默认名称',
       append: {
         text: '带图标的按钮',
         icon: 'iconadd2x'
@@ -135,7 +155,15 @@ const gridConfig = computed((): WjhGridConfig => ({
     'amountZH',
     'percentage',
     'status',
-    'audit_name',
+    {
+      label: '附件',
+      value: 'file',
+      type: 'upload',
+      tip: '上传组件提示信息',
+      attrs: {
+        // listType: 'text'
+      }
+    }
   ],
   checkboxConfig: {
     checkMethod: () => false
@@ -143,8 +171,13 @@ const gridConfig = computed((): WjhGridConfig => ({
   title: [
     { type: 'checkbox', align: 'center', width: '50' },
     { title: '序号', type: 'seq', align: 'center', width: '50' },
-    { title: '名称', field: 'name', minWidth: 100, isEdit: true, detailStatus: 'readonly' },
-    { title: '别名', field: 'alias', click: ({ column }) => $message.success(`点击表格: ${column.title}`) },
+    {
+      title: '名字',
+      children: [
+        { title: '名称', field: 'name', minWidth: 100, isEdit: true, detailStatus: 'readonly' },
+        { title: '别名', field: 'alias', click: ({ column }) => $message.success(`点击表格: ${column.title}`) },
+      ]
+    },
     { title: '开票日期', field: 'i_date', width: 100, flag: 'date', attrs: { format: 'YYYY-MM-DD' }},
     { title: '金额', field: 'amount', flag: 'RMB' },
     { title: '大写金额', field: 'amountZH', flag: 'RMBZH' },

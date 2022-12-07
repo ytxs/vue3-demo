@@ -1,27 +1,28 @@
-import CreateAxios from '@/utils/axios'
-import { Obj, Api } from '#'
+import { CreateRequest } from '@/utils/axios'
+import { Api, AxiosCreateRequestConfig } from '#'
 
-const request = CreateAxios(process.env.VITE_APP_BASE_API)
-const urls = {
-  create: '/v1/external/auth/role/create', // 创建
-  update: '/v1/external/auth/role/update', // 修改
-  disable: '/v1/external/auth/role/disable', // 封存/禁用
-  enable: '/v1/external/auth/role/enable', // 启用
-  // page: '/v1/external/auth/role/page', // 查询列表
-  list: '/v1/external/auth/role/list', // 查询所有角色
-  modelroleBind: '/v1/external/auth/modelrole/bind', // 角色绑定权限组
-  modelroleList: '/v1/external/auth/modelrole/list', // 角色已绑定权限组
-}
-function post(): Api<typeof urls> {
-  const obj: any = {}
-  for (const [key, url] of Object.entries(urls)) {
-    obj[key as keyof typeof urls] = (data?: Obj) => request({
-      url,
-      data
-    })
+const urls: AxiosCreateRequestConfig['urls'] = {
+  create: 'add', // 创建
+  update: 'update', // 修改
+  remove: 'delete', // 启用
+  list: 'list', // 启用
+  // page: 'list', // 查询列表
+  export: {
+    // baseURL: process.env.VITE_APP_BASE_API,
+    headers: {
+      // 请求头
+    },
+    method: 'get',
+    url: 'export',
+    responseType: 'blob'
   }
-  return obj
 }
+const request: Api<typeof urls> = CreateRequest({
+  baseURL: `${process.env.VITE_APP_BASE_API || ''}/manager-admin/configureMgr/`,
+  urls
+})
+export const { create, update, remove, list } = request
+
 export function page() {
   return {
     rows: [
@@ -49,4 +50,3 @@ export function page() {
     total: 2
   }
 }
-export const { create, update, disable, enable, list, modelroleBind, modelroleList } = post()

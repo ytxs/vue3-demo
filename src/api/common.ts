@@ -1,8 +1,7 @@
-import CreateAxios from '@/utils/axios'
-import { Obj, Api } from '#'
+import { CreateRequest } from '@/utils/axios'
+import { Api, AxiosCreateRequestConfig } from '#'
 
-const request = CreateAxios(process.env.VITE_APP_BASE_API)
-const urls = {
+const urls: AxiosCreateRequestConfig['urls'] = {
   getRelation: '/v2/common/component/enumList', // 枚举
   getPublicUrl: '/common/oss/getPublicUrl', // oss路径
   pageSearch: '/basic/pageSearch', // 公共搜索接口
@@ -10,16 +9,10 @@ const urls = {
   querySupplierList: '/v2/common/component/getSup', // 供应商列表
   componentGetOssSecret: '/v2/common/component/getOssSecret', // 获取上传文件的token
 }
-function post(): Api<typeof urls> {
-  const obj: any = {}
-  for (const [key, url] of Object.entries(urls)) {
-    obj[key as keyof typeof urls] = (data?: Obj) => request({
-      url,
-      data
-    })
-  }
-  return obj
-}
+const request: Api<typeof urls> = CreateRequest({
+  baseURL: `${process.env.VITE_APP_BASE_API || ''}`,
+  urls
+})
 
 export const {
   getRelation,
@@ -28,4 +21,4 @@ export const {
   queryCustomerList,
   querySupplierList,
   componentGetOssSecret
-} = post()
+} = request
